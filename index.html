@@ -1,93 +1,125 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
   <head>
     <title>Joseph Balsells' Homepage</title>
 
     <meta charset="UTF-8">
-    <meta name="description" content="I am a senior at Yale, completing a B.S. degree in Physics. Currently, I am working for">
+
     <meta name="keywords" content="Joseph,Balsells,clouds">
-    <meta name="author" content="Joseph Balsells">
+    <meta name="author"   content="Joseph Balsells">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I am a senior at Yale, completing a B.S. degree in Physics. Currently, I am working for">
+    
     <link rel="stylesheet" type="text/css" href="main.css">
 
   </head>
 
+  
+  <!-------------------------------------------------------------------------------->
+
+  
   <body>
     
-
-   <img src="images/bear_peak.JPG" alt="Bear Peak Colorado" style="max-width:100%">
+    
+    <img src="images/bear_peak.jpg" alt="Bear Peak Colorado" style="max-width:100%">
 
 
 	
-   <div class="container">
-     <br><br>
-     <h1><center> Joseph Balsells </center></h1>
-     <h3><center> 
-	 <a href="mailto:joseph.balsells@yale.edu?subject=Website Inquiry"> joseph.balsells@yale.edu </a></center></h3>
-     <br>
-   </div>
+    <div class="container">
+      <br>
+      
+      <h1><center> Joseph Balsells </center></h1>
+      
+      <h3><center> 
+	  <a href="mailto:joseph.balsells@yale.edu?subject=Website Inquiry">
+	    joseph.balsells@yale.edu </a></center></h3>
+      <br>
+      
+    </div>
 
 
-   <hr class="featurette-divider">
-   <br><br>
+    <hr>
+    <br><br>
 
      
-
+    <!---------- About me -------------->
      
-   <div style="padding-left: 20%; padding-right:20%;">
-
-     <img class="img-rounded"
-	  src="images/me.jpg"
-	  alt="..."
-	  style="float:left;width:170px;height:auto;"
-	  hspace="40">
-       <div style="padding-left:30px;">
-	 <h2>About me</h2>
-
-	 <p>I am a senior at Yale, completing a B.S. degree in Physics.</p>
-
-	 <p>Currently, I am working for the National Oceanic and Atmosphereic Administration (NOAA) Earth System Research Laboratory (ESRL) in Boulder, Colorado. <a href="https://www.esrl.noaa.gov/" target="">ESRL was formed to pursue a broad and comprehensive understanding of the Earth system</a>. When I started at NOAA in 2015 I joined a group which studies cloud processes using a numerical model to create realistic computer-generated clouds. Because we use a numerical model we have access to much more detailed measurements than would be possible with traditional measurement devices such as weather balloons and radar. Specifically we are interested in the impact low clouds have on the global energy budget. Our approach is to focus on a top-down understanding of cloud properties which is somewhat independent of many complicated details.</p>
-	 <p>Outside of work I enjoy being outdoors.</p>
-       </div>
-   </div>    
+    <div class="center">
 
 
-   <hr class="featurette-divider">
-   <br><br>
+      
+      <img class="img-rounded"
+	   src="images/me.jpg"
+	   alt="..."
+	   style="float:left;margin-top:70px;width:170px;height:auto;"
+	   hspace="40">
 
-   <div>
-     <h2>My Research</h2>
 
-     <img class="img-rounded"
-	  src="images/SAM.PNG"
-	  alt="..."
-	  style="float:right;width:500px;height:auto;"
-	  hspace="40">
+      <div style="overflow:hidden;">
+	<h2>About me</h2>
+	<p>I am a senior at Yale, completing a B.S. degree in Physics.</p>
 
-     <h4>Analysis of albedo versus cloud fraction relationships in liquid water clouds using heuristic models and large eddy simulation</h4>
+	<p>Currently, I am working for the National Oceanic and Atmosphereic Administration (NOAA) Earth System Research Laboratory (ESRL) in Boulder, Colorado. Our goal at ESRL is to gain a comprehensive understanding of the earth system. When I started at NOAA in 2015 I joined a group researching cloud processes with the aide of a numerical model. The numerical model creates realistic computer-generated clouds which we can then study in far greater detail than would be possible in the real world. Specifically we are pursuing a deeper understanding of low clouds. Because clouds cover nearly two-thirds of the world's surface at any given time it is essential that we understand their processes if we want to understand the Earth system as a whole.</p>
+	<p>In my first year at NOAA I worked on implementing high-order Weighted Essentially Non-Oscillatory (WENO) numerical schemes into the model my group uses. When the equations of physics are implemented in a numerical model they must be discretized. There are many ways to discretize a given equation but none faithfully represent the original continuous equation perfectly. Two properties we would like the discretized versions of equations to maintain are conservation of mass and conservation of energy.</p>
+	<p>In my second year I worked on the properties of trade cumulus clouds. Specifically I worked on understanding the power law relationship exibited in the size distribution of cumulus clouds and how this robust feature could be applied to a simple model of cumulus clouds.</p>
+	<p>This year my work focuses on stratocumulus clouds and a deeper understanding of the power law behavior exhibited by cumulus clouds</p>
+	<p>Outside of work I enjoy being outdoors. I love hiking and being by the Colorado Rocky Mountains.</p>
+      </div>
+    </div>    
 
-     <p>A paper written in collaboration with
-       <a href="https://www.esrl.noaa.gov/csd/staff/graham.feingold/" target="_blank">
-       Graham Feingold</a>,
-       <a href="https://www.esrl.noaa.gov/csd/staff/franziska.glassmeier/" target="_blank">
-       Franziska Glassmeier</a>,
-       <a href="http://cires.colorado.edu/directory/takanobu-yamaguchi" target="_blank">
-       Takanobu Yamaguchi</a>,
-       <a href="https://www.esrl.noaa.gov/csd/staff/jan.kazil/" target="_blank">
-       Jan Kazil</a>, and
-       <a href="https://www.esrl.noaa.gov/gmd/staff/Allison.McComiskey/" target="_blank">
-       Allison McComiskey</a>,
+    <br>
+    <hr>
+    <br><br>
+
+
+    <!------------------- My Research ------------------------------>
+    <div class="center">
+
+
+      <img class="img-rounded"
+	   src="images/model_close_up.png"
+	   alt="..."
+	   style="float:right;width:400px;height:auto;"
+	   hspace="40">
+      
+      <h2>My Research</h2>
+
+      <h4>Analysis of albedo versus cloud fraction relationships in liquid water clouds using heuristic models and large eddy simulation</h4>
+
+      <p>A paper written in collaboration with
+	<a href="https://www.esrl.noaa.gov/csd/staff/graham.feingold/" target="_blank">
+	  Graham Feingold</a>,
+	<a href="https://www.esrl.noaa.gov/csd/staff/franziska.glassmeier/" target="_blank">
+	  Franziska Glassmeier</a>,
+	<a href="http://cires.colorado.edu/directory/takanobu-yamaguchi" target="_blank">
+	  Takanobu Yamaguchi</a>,
+	<a href="https://www.esrl.noaa.gov/csd/staff/jan.kazil/" target="_blank">
+	  Jan Kazil</a>, and
+	<a href="https://www.esrl.noaa.gov/gmd/staff/Allison.McComiskey/" target="_blank">
+	  Allison McComiskey</a>,
 		     
-       published in the
-       <a href="http://agupubs.onlinelibrary.wiley.com/hub/jgr/journal/10.1002/(ISSN)2169-8996/" target="_blank">Journal of Geophysical Research: Atmospheres</a>,
-       on deriving a simple analytic model to represent the albedo &#8211 cloud-fraction relationship.</p>
-     <a href="http://onlinelibrary.wiley.com/doi/10.1002/2017JD026467/full" target="_blank">
-       [Journal Link]</a>
-   </div>
+	published in the
+	<a href="http://agupubs.onlinelibrary.wiley.com/hub/jgr/journal/10.1002/(ISSN)2169-8996/" target="_blank">Journal of Geophysical Research: Atmospheres</a>,
+	on deriving a simple analytic model to represent the albedo &#8211 cloud-fraction relationship.</p>
+      <p><b>(Spring 2017) JGR: Atmospheres</b>
+      <a href="http://onlinelibrary.wiley.com/doi/10.1002/2017JD026467/full" target="_blank">
+	[Journal Link]</a>[PDF]</p>
 
-called the System for Atmospheric Modeling (<a href="http://rossby.msrc.sunysb.edu/~marat/SAM.html"> SAM </a>)
+      <br>
+      
+      The model my group uses is the System for Atmospheric Modeling (<a href="http://rossby.msrc.sunysb.edu/~marat/SAM.html"> SAM </a>).
+
+    </div>      
+    <br>
 
 
+    <!-- ***************** Footer ********************** -->
+    <hr>
+    <br>
+    <footer>
+      <p class="center"> Updated August 1, 2017 </p>
+    </footer>
    
   </body>
   
