@@ -3,7 +3,8 @@
 
   <head>
     <title>Joseph Balsells' Homepage</title>
-
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     <meta charset="UTF-8">
 
     <meta name="keywords" content="Joseph,Balsells,clouds">
@@ -101,24 +102,57 @@
 		     
 	published in the
 	<a href="http://agupubs.onlinelibrary.wiley.com/hub/jgr/journal/10.1002/(ISSN)2169-8996/" target="_blank">Journal of Geophysical Research: Atmospheres</a>,
-	on deriving a simple analytic model to represent the albedo &#8211 cloud-fraction relationship.</p>
+	introducing a simple analytic model of cumulus to represent the albedo &#8211 cloud-fraction relationship. Albedo and cloud fraction are key macroscale properties in climate studies. While it is true that albedo increases monotonically with cloud-fraction the form of the relationship can vary from linear to super-linear. We tie a super-linear response to cloud fields in which clouds widen as they deepen.</p>
       <p><b>(Spring 2017) JGR: Atmospheres</b>
       <a href="http://onlinelibrary.wiley.com/doi/10.1002/2017JD026467/full" target="_blank">
 	[Journal Link]</a>[PDF]</p>
 
       <br>
-      
-      The model my group uses is the System for Atmospheric Modeling (<a href="http://rossby.msrc.sunysb.edu/~marat/SAM.html"> SAM </a>).
 
-    </div>      
+
+    </div>
+
+    
     <br>
 
+    <div class="center">
+      <h2>Atmospheric Modeling</h2>
 
+      
+      <p>Processes relevent to atmospheric science encompass a staggering range of scales. Aerosol activation and cloud droplets occupy nano and micro scales while the global circulation occupies thousands of kilometers. To fully resolve all of these processes in a single model will be beyond computational ability for the foreseeable future. But even if we could resolve all of these scales at the same time, we may not want to or even need to. Depending on the application it may be unimportant to track the location of every droplet in a cloud. Thus there exists a hierarchy of models to cater to the diverse needs of atmospheric research. The model my group uses is of intermediate variety, resolving domains from a few kilometers wide to perhaps 100km with a resolution ranging from 10m to 100m. Any process occuring in a gridbox smaller than 10-100m is not resolved explicitly by the model. The model my group uses is called the System for Atmospheric Modeling (<a href="http://rossby.msrc.sunysb.edu/~marat/SAM.html"> SAM </a>).</p>
+
+      <br>
+      <h3>Cumulus</h3>
+      <p>This is a closeup of a small corner of a standard simulation using SAM. The case simulated here is <a href="https://www.eol.ucar.edu/field_projects/bomex">BOMEX</a>. Tak Yamaguchi ran the simulation.</p>
+      <div align="center">
+	<video width="500" controls>
+	  <source src="Files/rotate.mp4" type="video/mp4">
+	</video>
+      </div>
+
+      <p>The full simulated domain is larger.</p>
+      <br>
+      <div align="center">
+	<video width="60%" controls>
+	  <source src="Files/cloud_movie.mp4" type="video/mp4">
+	</video>
+      </div>
+
+      <br>
+      <h3>Stratocumulus</h3>
+      <p>The following is a simulation of stratocumulus based on a case measured by the <a href="https://www.wcrp-climate.org/modelling-wgcm-mip-catalogue/modelling-wgcm-mips-2/254-modelling-wgcm-catalogue-gcss">GEWEX Cloud System Study</a> (GCSS). The domain is 38.4 km on both sides and 1600 m high. The video displays a full 24 hour cycle with the background color giving an indication to the time of day. The simulation begins at sundown and goes through a 10 hour night before sunrise. During the night the cloud layer is thick. During the day shortwave heating from solar radiation causes the cloud layer to thin. Jan Kazil ran the simulation.</p>
+      <div align="center">
+	<video style="width:60%;" controls>
+	  <source src="Files/diurnal.mp4" type="video/mp4">
+	</video>
+      </div>
+
+    </div>
     <!-- ***************** Footer ********************** -->
     <hr>
     <br>
     <footer>
-      <p class="center"> Updated August 1, 2017 </p>
+      <p class="center"> Updated August 2, 2017 </p>
     </footer>
    
   </body>
