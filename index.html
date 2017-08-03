@@ -5,21 +5,33 @@
 
     <title>Joseph Balsells' Homepage</title>
 
-    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
 
 
     <meta name="keywords" content="Joseph,Balsells,clouds">
     <meta name="author"   content="Joseph Balsells">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="I am a senior at Yale, completing a B.S. degree in Physics. Currently, I am working for">
+
+
     
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
 
   </head>
 
+
+
+
+
+
   
   <!-------------------------------------------------------------------------------->
+
+
+
+
+
 
   
   <body>
@@ -31,25 +43,22 @@
 
 
 	
-    <div class="container">      <br>
+    <div style="text-align:center"><br>
       
-      <h1><center> Joseph Balsells </center></h1>
+      <h1>Joseph Balsells</h1>
       
-      <h3><center> 
-	  <a href="mailto:joseph.balsells@yale.edu?subject=Website Inquiry">
-	    joseph.balsells@yale.edu </a></center></h3>
+      <h3> <a href="mailto:joseph.balsells@yale.edu?subject=Website Inquiry">
+	    joseph.balsells@yale.edu </a></h3>
 
     </div>
 
-    <br>
-    <hr>
+    <br><hr>
     <br><br>
 
      
     <!---------- About me -------------->
      
     <div class="center">
-
 
       
       <img class="img-rounded"
@@ -60,19 +69,21 @@
 
 
       <div style="overflow:hidden;">
+
 	<h2>About me</h2>
+
 	<p>I am a senior at Yale, completing a B.S. degree in Physics.</p>
 
-	<p>Currently, I am working for the National Oceanic and Atmosphereic Administration (NOAA) Earth System Research Laboratory (ESRL) in Boulder, Colorado. As a national lab, the work done at NOAA helps to inform US policy. Our goal at ESRL is to gain a comprehensive understanding of the earth system. Clouds, which cover nearly two-thirds of the world's surface at any given time, are an essential part of that system. Clouds are an integral component in the radiative balance of the Earth but also are responsible for rainfall and drought. It is essential that we understand their processes and how they respond to external forcing if we want to understand the Earth system as a whole.</p>
-	<p>When I started at NOAA in 2015 I joined a group researching cloud processes with the aid of a numerical model. The numerical model creates realistic computer-generated clouds which we can then study in far greater detail than would be possible in the real world. Specifically we are pursuing a deeper understanding of low clouds. We are interested in their response to changing aerosol conditions.</p>
-	<p>In my first year at NOAA I worked on implementing high-order Weighted Essentially Non-Oscillatory (WENO) numerical schemes into the model my group uses. When the equations of physics are implemented in a numerical model they must be discretized. There are many ways to discretize a given equation but none faithfully represent the original continuous equation perfectly. Two properties we would like the discretized versions of equations to maintain are conservation of mass and conservation of energy.</p>
-	<p>In my second year I worked on the properties of trade cumulus clouds. Specifically I worked on understanding the power law relationship exibited in the size distribution of cumulus clouds and how this robust feature could be applied to a simple model of cumulus clouds.</p>
-	<p>This year my work focuses on stratocumulus clouds and a deeper understanding of the power law behavior exhibited by cumulus clouds</p>
+	<p>Currently, I am working for the National Oceanic and Atmosphereic Administration (NOAA) Earth System Research Laboratory (ESRL) in Boulder, Colorado where I study cloud and aerosol processes. Our goal at ESRL is to gain a comprehensive understanding of the earth. The earth is a complex multiscale system with phenomena as small solar photons impinging on the upper atmosphere and as large global circulation of the jet streams playing integral roles. Clouds, which cover nearly two-thirds of the world's surface at any given time, are an essential part of that system.</p>
+	<p>Clouds may affect our lives on very short timescales, but their climatic patterns affect our lives much more permanently. On a global scale clouds are essential in maintaining the radiative balance of the Earth. <a href="http://wwwdca.iag.usp.br/www/material/akemi/radiacao-I/Pollution_and_Planetary_Albedo_Twomey74a.pdf">One of the great papers of atmospheric science</a> showed how it was possible to alter the global climate through pumping tons of pollution into the atmosphere. The pollution we produce, along with natural sources, are referred to as aerosols. When water vapor is elevated in the atmosphere to a temperature where it is cool enough to reach saturation, clouds still cannot form because the tiny droplets of water break apart too easily. It is only through the action of aerosols acting as cloud droplet nuclei that cloud droplets grow large enough to sustain a cloud. So a small amount of aerosol is necessary. But with more aerosol, more cloud droplets would form from the same amount of condensed water leading to clouds with different optical properties. How would the world look if two-thirds of its surface had optical properties which were altered by even a few percent? How would rain patterns change? And how would we respond? This problem bridges the gap between chemistry and physics as we seek to determine whether changing aersol conditions can alter global atmospheric dynamics. This problem has real implications and as a national lab, NOAA is tasked with determining the answers to these questions. If we want to understand the Earth system as a whole, we must understand clouds processes and how they respond to external forcing.</p>
+	<p>Although there is no substitue for measurements on real clouds, the open atmosphere is difficult to measure and impossible to perform replicable experiments. In response to nature's unyielding resolve to never repeat herself, we have created numerical models which simulate natures of our own. With these models we can run large-scale, replicable experiments on realistic clouds which we may then analyze at our leisure and in explicit detail. The influence of numerical models on atmospheric science has been profound.</p>
+	<p>Despite their complexity however, these simulated "natures" are still imperfect. When the equations of physics are implemented in a numerical model they must be discretized. There are many ways to discretize a given equation but none faithfully represent the original continuous equation perfectly. Just as any map must be an imperfect representation of the terrain it represents, models of nature must choose to represent certain features and neglect others. Part of the task of atmospheric research is developing schemes to put in our models which maintain features we are interested in. There are many properties we may want to keep in a model, but two properties we always care about are the conservation of mass and the conservation of energy. Not every discretization scheme does this and remains accurate. In my first year at NOAA I worked on implementing high-order Weighted Essentially Non-Oscillatory (WENO) numerical schemes into the model my group uses.</p>
+	<p>In my second year I turned from the mechanics of the model to using it to study properties of trade cumulus clouds. Specifically I worked on understanding the power law relationship exhibited in the size distribution of cumulus clouds and how this robust feature could be applied to understand higher level properties of cloud fields in a simple analytical model of cumulus clouds.</p>
+	<p>This year my work focuses on stratocumulus clouds and a deeper understanding of the power law behavior exhibited by all clouds.</p>
       </div>
     </div>    
 
-    <br>
-    <hr>
+    <br><hr>
     <br><br>
 
 
@@ -104,7 +115,7 @@
 		     
 	published in the
 	<a href="http://agupubs.onlinelibrary.wiley.com/hub/jgr/journal/10.1002/(ISSN)2169-8996/" target="_blank">Journal of Geophysical Research: Atmospheres</a>,
-	introducing a simple analytic model of cumulus to represent the albedo &#8211 cloud-fraction relationship. Albedo and cloud fraction are key macroscale properties in climate studies. While it is true that albedo increases monotonically with cloud-fraction the form of the relationship can vary from linear to super-linear. We tie a super-linear response to cloud fields in which clouds widen as they deepen.</p>
+	introducing a simple analytic model of cumulus to represent the albedo &#8211 cloud-fraction relationship. Albedo and cloud fraction are key macroscale properties in climate studies. While it is true that albedo increases monotonically with cloud-fraction the form of the relationship can vary from linear to super-linear. We tie a super-linear response to cloud fields in which clouds widen as they deepen, as in cumulus.</p>
       <p><b>(Spring 2017) JGR: Atmospheres</b>
       <a href="http://onlinelibrary.wiley.com/doi/10.1002/2017JD026467/full" target="_blank">
 	[Journal Link]</a>[PDF]</p>
@@ -121,7 +132,7 @@
       <h2>Atmospheric Modeling</h2>
 
       
-      <p>Processes relevent to atmospheric science encompass a staggering range of scales. Aerosol activation and cloud droplets occupy nano and micro scales while the global circulation occupies thousands of kilometers. To fully resolve all of these processes in a single model will be beyond computational ability for the foreseeable future. But even if we could resolve all of these scales at the same time, we may not want to or even need to. Depending on the application it may be unimportant to track the location of every droplet in a cloud. Thus there exists a hierarchy of models to cater to the diverse needs of atmospheric research. The model my group uses is of intermediate variety, resolving domains from a few kilometers wide to perhaps 100km with a resolution ranging from 10m to 100m. Any process occuring in a gridbox smaller than 10-100m is not resolved explicitly by the model. The model my group uses is called the System for Atmospheric Modeling (<a href="http://rossby.msrc.sunysb.edu/~marat/SAM.html"> SAM </a>).</p>
+      <p>Processes relevent to atmospheric science encompass a staggering range of scales. Aerosol activation and cloud droplets occupy nano and micro scales while the global circulation occupies thousands of kilometers. To fully resolve all of these processes in a single model will be beyond computational ability for the foreseeable future. But even if we could resolve all of these scales at the same time, we may not want to or even need to. Depending on the application it may be unimportant to track the location of every droplet in a cloud. Thus there exists a hierarchy of models to cater to the diverse needs of atmospheric research. The model my group uses is of intermediate variety, resolving domains from a few kilometers wide to perhaps 100km with a resolution ranging from 10m to 100m. Any process occuring in a gridbox smaller than 10-100m is not resolved explicitly by the model. The model my group uses is called the System for Atmospheric Modeling (<a href="http://rossby.msrc.sunysb.edu/~marat/SAM.html">SAM</a>).</p>
 
       <br>
       <h3>Cumulus</h3>
@@ -142,7 +153,7 @@
 
       <br>
       <h3>Stratocumulus</h3>
-      <p>The following is a simulation of stratocumulus based on a case measured by the <a href="https://www.wcrp-climate.org/modelling-wgcm-mip-catalogue/modelling-wgcm-mips-2/254-modelling-wgcm-catalogue-gcss">GEWEX Cloud System Study</a> (GCSS). The domain is 38.4 km on both sides and 1600 m high. The video displays a full 24 hour cycle with the background color giving an indication to the time of day. The simulation begins at sundown and goes through a 10 hour night before sunrise. During the night the cloud layer is thick. During the day shortwave heating from solar radiation causes the cloud layer to thin. Jan Kazil ran the simulation.</p>
+      <p>The following is a simulation of stratocumulus based on a case measured by the <a href="https://www.wcrp-climate.org/modelling-wgcm-mip-catalogue/modelling-wgcm-mips-2/254-modelling-wgcm-catalogue-gcss">GEWEX Cloud System Study</a> (GCSS). The domain is 38.4 km on both sides and 1600m high. The video displays a full 24 hour cycle with the background color giving an indication to the time of day. The simulation begins at sundown and goes through a 10 hour night before sunrise. During the night the cloud layer is thick. During the day shortwave heating from solar radiation causes the cloud layer to thin. Jan Kazil ran the simulation.</p>
       <div align="center">
 	<video style="width:60%;" controls>
 	  <source src="Files/diurnal.mp4" type="video/mp4">
