@@ -18,6 +18,31 @@
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
 
+    <style>
+      
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      div.center {
+        padding-left: 20%;
+        padding-right:20%;
+      }
+
+      @media screen and (max-width: 500px){
+        div.center {
+          padding-left: 2%;
+          padding-right: 2%;
+        }
+      }
+      
+
+    </style>
+
+
+    
   </head>
 
 
@@ -35,19 +60,26 @@
   <body>
 
 
+    <div class="clearfix">
+      <p>
+	Notes from some of my courses.
+      </p>
 
-    <p>
-      Notes from some of my courses.
-    </p>
+      <img src="https://farm5.staticflickr.com/4636/27696869509_bdff3ac45c_o.jpg"
+	   width="250"
+	   alt="Symmetry"
+	   style="float: right; padding-right:100px">
+
+      <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>  
+
+      <ul>
+	<li><a href="./group_theory_notes.pdf"    target="_blank">Group Theory</a></li>
+	<li><a href="../Files/astr_termpaper.pdf" target="_blank">Analogue Gravity</a></li>
+	<li><a href="./complex_analysis.pdf"      target="_blank">Complex Analysis</a></li>
+      </ul>
 
 
-    <ul>
-      <li><a href="./group_theory_notes.pdf" target="_blank">Group Theory</a></li>
-      <li><a href="./complex_analysis.pdf" target="_blank">Complex Analysis</a></li>
-    </ul>
-
-
-
+    </div>
 
 
 
