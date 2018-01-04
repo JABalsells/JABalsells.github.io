@@ -62,7 +62,7 @@ div.center {
     padding-right:20%;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 600px){
     div.center {
 	padding-left: 2%;
 	padding-right: 2%;
