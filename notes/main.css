@@ -65,6 +65,7 @@ li.nav a {                       /* Style of links in navbar */
     color: #c4c8d1;
     padding: 8px 16px;
     text-decoration: none;
+    text-align: center;
     font-weight: bold;
 }
 
@@ -75,7 +76,20 @@ li.nav a:hover {                 /* Change the link color on hover */
 }
 
 @media screen and (max-width: 600px){
-    ul.nav li {float: none;}
+    ul.nav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: #163f82;
+	position: fixed;         /* Make it stick, even on scroll */
+	overflow: hidden;
+    }    
+
+    ul.nav li {
+	float: none;
+	text-align:center;
+	}
 }
 
 /**********/

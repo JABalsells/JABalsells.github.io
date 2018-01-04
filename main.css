@@ -33,6 +33,7 @@ li a {                       /* Style of links in navbar */
     color: #c4c8d1;
     padding: 8px 16px;
     text-decoration: none;
+    text-align: center;
     font-weight: bold;
 }
 
@@ -43,7 +44,20 @@ li a:hover {                 /* Change the link color on hover */
 }
 
 @media screen and (max-width: 600px){
-    ul li {float: none;}
+    ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: #163f82;
+	position: fixed;         /* Make it stick, even on scroll */
+	overflow: hidden;
+    }    
+
+    ul li {
+	float: none;
+	text-align: center;
+	}
 }
 
 /**************  Other stuff  ***************/
@@ -84,6 +98,10 @@ h2 {
     font-family: Verdana, Tahoma;
 }
 
+h2.center { 
+    text-align: center;
+}
+
 h3 { 
     font-family: Verdana, Tahoma;
 }
@@ -118,11 +136,16 @@ p.center {
 }
 
 @media screen and (max-width: 500px){
+    h1 {
+	font-size: 30px;
+	font-family: Verdana, Tahoma;
+    }
+    
     .img-rounded {
 	border-radius: 6px;
 	margin-top:0px;
-	margin-bottom:25px;
-	width:170px;
+	margin-bottom:5px;
+	width:120px;
 	height:auto;
 }
 
