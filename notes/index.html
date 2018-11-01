@@ -24,7 +24,7 @@
   <!-------------------------------------------------------------------------------->
 
   
-  <body width="device width">
+  <body>
 
     <ul class="nav">
       <li class="nav"><a href="../index.html">Home</a></li>
@@ -36,35 +36,214 @@
     <br><br>
     <br><br>
 
-    
-    <div class="clearfix">
-    <div class="center">  
-      <p>
+        
+
+    <div style="text-align:center"><br>
+      
+      <h4>
 	Notes from some of my courses.
+      </h4>
+      
+
+      <br><a href="./dijkgraaf-witten-theory.pdf" target="_blank">Dijkgraaf-Witten Theory</a>
+      <br><a href="./thesis.pdf"                  target="_blank">Representation Theory of SO(3)</a>
+      <br><a href="../Files/astr_termpaper.pdf"   target="_blank">Analogue Gravity</a>
+      <br><a href="./group_theory_notes.pdf"      target="_blank">Group Theory</a>
+      <br><a href="./complex_analysis.pdf"        target="_blank">Complex Analysis</a>
+
+
+    </div><br>
+
+
+
+
+    <!--********* LaTeX ***********-->
+
+      
+    
+    <br><hr>
+    <p id="latex"></p>
+    <br><br>
+
+    <div class="center">
+      
+      <h2>
+	LaTeX Tips
+      </h2>
+
+      <p>
+	I have collected here a few bits of LaTeX that I have found useful in my writing for future reference.
       </p>
       
-      <img src="https://farm5.staticflickr.com/4636/27696869509_bdff3ac45c_o.jpg"
-	   width="250"
-	   alt="Symmetry"
-	   style="float: right; padding-right:100px">
+      <h3>
+	Placing figures in a report
+      </h3>
 
-      <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>  
+      <p>
+	A report should have good looking figures. The <code>graphicx</code> package is the default for including figures in a LaTeX document. A standard useage looks like
+      </p>
 
+      <div style="display:flex;">
+      <pre style="width:45%;float:left;">
+      <code>
+	\begin{figure} 
+	   \centering
+	   \includegraphics[scale=.3]{imagefile}
+	   \caption{\footnotesize \textbf{Short description.}
+              Long, self-contained caption.
+  	   }  \label{fig:image}
+	\end{figure}
+      </code>
+      </pre>
+
+      <div style="float:right;width:55%;">
+	<img src="../Files/ontop.png" width="100%" alt="figure ontop of caption">
+      </div>
+      </div>
+      
+      <p>
+	This is quick and easy but I find it often leaves too much white space in the paper. If the figure is anything but a wide rectangle then there will be wasted space to the left and right of the figure. To make use of this space we can use minipages to put the caption in this extra space.
+      </p>
+
+      <div style="display:flex;">      
+      <pre style="float:left;width:45%">
+      <code>
+	\begin{figure}
+	   \qquad
+	   \begin{minipage}[c]{.45\textwidth}
+	      \includegraphics[width=\textwidth]{imagefile}
+	   \end{minipage}
+	   \;
+	   \begin{minipage}[c]{.45\textwidth}
+	      \caption{ \footnotesize \textbf{Short description.}
+	         Long, self-contained caption.
+	      }  \label{fig:}
+	   \end{minipage}
+	\end{figure}
+      </code>
+      </pre>
+      
+      <div style="float:right;width:55%">
+	<img src="../Files/sidebyside.png" width="100%" alt="figure alongside caption">
+      </div>
+
+      </div>
+      
+      <p>
+	Lastly, if we want to include multiple subfigures we can use the package <code>subcaption</code>.
+      </p>
+
+      <div style="display:flex;">      
+      <pre style="float:left;width:45%">
+	<code>
+	\begin{figure}
+	   \begin{subfigure}{.5\textwidth}
+	      \centering
+              \includegraphics[width=\textwidth]{imagefile}
+	      \caption*{\textbf{(a)}}
+	      \label{fig:label}
+	   \end{subfigure}
+	   \begin{subfigure}{.5\textwidth}
+	      \centering
+	      \includegraphics[width=\textwidth]{imagefile}
+	      \caption*{\textbf{(b)}}
+	   \end{subfigure}
+	   \caption{\footnotesize \textbf{Short description. (a)}
+	      Self-contained caption for (a).
+   	      \textbf{(b)} Self-contained caption for (b).
+	   }  \label{fig:label}
+	\end{figure}
+      </code>
+      </pre>
+
+
+      <div style="float:right;width:55%">
+	<img src="../Files/subfigure.png" width="100%" alt="two subfigures">
+      </div>
+
+      </div>
+      
+      <br>
+
+
+      <h3>
+	Making a title page by hand
+      </h3>
+
+      <p>
+	For anything more than a couple page paper you might want a dedicated title page. The code I used to make the title page of my thesis looked like this:
+      </p>
+
+      <div style="display:flex;">      
+      <pre style="float:left;width:55%">
+	<code>
+	  \begin{titlepage}
+	  \begin{center}
+	     \bfseries
+	     \huge YALE UNIVERSITY 
+	     \vskip.2in
+	     \large Department of Physics 
+	     \vskip2.5in
+  
+	     \huge SO(3) Invariants of Spherical Functions
+  
+	     \vskip 2.5in
+	     \bfseries\large Student:\par \emph{Joseph Balsells}
+	     \vskip .5in
+	     \bfseries\large Supervisor:\par \emph{Prof. George Fleming}
+	  \end{center}
+
+	  \end{titlepage}
+
+	  \thispagestyle{empty}
+	</code>
+      </pre>
+      
+      <div style="float:right;width:45%">
+	<img src="../Files/titlepage.png" width="100%" alt="Title page">
+      </div>
+
+      </div>
+
+      
+      <h3>
+	Making the report look great
+      </h3>
+
+      <p>
+	You could argue that the point of LaTeX is to make a report look good without doing anything. LaTeX separates the design from the writing. And for professional (journal) articles, the markup is outsourced to the journal. But for reports that never make it to publication we can handle some of the design ourselves. The first thing I like to do is to change the page color. We could make the page color anything we want, but I find something just greyer than white to be much easier to read on a computer (if the report is to be printed, of course we should reset the page color to plain white). We change the page color in the preamble
+      </p>
+
+      <pre>
+	<code>
+	  \usepackage{xcolor}
+	  \definecolor{anti-flashwhite}{rgb}{0.95, 0.95, 0.96}
+	  \pagecolor{anti-flashwhite}
+	</code>
+      </pre>
+      
+      <p>
+	Easy! There is a plain <code>color</code> package but I am not familiar with it and <code>xcolor</code> is supposed to be better. I defined my own color but <code>xcolor</code> has several package options which control whether/how sets of predefined colors are loaded. The most useful of these are <code>x11names</code> and <code>dvipsnames</code>.
+      </p>
+
+
+      
       <br>
       
-      <ul>
-	<li><a href="./group_theory_notes.pdf"    target="_blank">Group Theory</a></li>
-	<li><a href="../Files/astr_termpaper.pdf" target="_blank">Analogue Gravity</a></li>
-	<li><a href="./complex_analysis.pdf"      target="_blank">Complex Analysis</a></li>
-      </ul>
+      <h3>
+	Adding a package to a LaTeX install on linux
+      </h3>
+      
+      <p>
+	When writing a LaTeX document most of the packages we need come prepackaged with our LaTeX install. However ocassionally we find a useful package (for example on CTAN) that is not already installed with our installation. If you write your LaTeX documents in an IDE this will probably have an integrated way to download new packages. If you are on linux however, you will probably have to install it by hand. hannah dee explains how to do this on her <a href="http://www.hannahdee.eu/blog/?p=835">blog</a>. I am copying the essential steps here for my own reference.
+      </p>
 
-
+      <ol>
+	<li></li>
+	<li></li>
+      </ol>
+      
     </div>
-    </div>
-
-
-
-    
 
 
     <!-- ***************** Footer ********************** -->
