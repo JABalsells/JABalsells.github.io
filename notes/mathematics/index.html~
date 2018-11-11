@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>    <meta charset="UTF-8">
+
+    <title>Notes</title>
+
+    
+    <meta name="keywords"    content="Joseph,Balsells">
+    <meta name="author"      content="Joseph Balsells">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notes from some of my courses.">
+    
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel Decorative" rel="stylesheet">        
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+
+    <!-- Enable MathJax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    
+  </head>
+
+
+
+  <!-------------------------------------------------------------------------------->
+
+  
+  <body>
+
+    <ul class="nav">
+      <li class="nav"><a href="../index.html">Home</a></li>
+      <li class="nav"><a href="../index.html#Research">Research</a></li>
+      <li class="nav"><a href="../musings/index.html">Musings</a></li>      
+      <li class="nav"><a href="./index.html">Notes</a></li>
+      <li class="nav"><a href="../photos.html">Photos</a></li>
+    </ul>
+
+    <br><br>
+    <br><br>
+
+
+
+    
+
+    <h1 class="fancy">Notes on Physics and Mathematics</h1>
+
+
+
+
+    <!--********* Spherical Coordinates and Angular Momentum  ***********-->
+
+    <p id="sphcoordangmom"></p>
+    <br><br>
+
+    <div class="center">
+      
+      <h2>
+	Spherical Coordinates and Angular Momentum
+      </h2>
+
+
+      <p>
+	In classical mechanics we define the angular momentum of a particle with position \(\vec{r}\) and momentum \(\vec{p}\) as \(\vec{L} = \vec{r} \times \vec{p}  \). In cartesian coordinates this amounts to
+      </p>
+      
+      \begin{align}
+      L_x &= yp_z - zp_y \\
+      L_y &= zp_x - xp_z \\
+      L_z &= xp_y - yp_x \\
+      \end{align}
+
+      <p>
+	Angular momentum is a useful quantity in problems with spherical symmetry because it is a conserved quantity of such systems. There are several ways to show this. The simplest utilizes Poisson brackets (done below).
+      </p>
+
+      <p>
+	A problem is said to possess spherical symmetry when the potential depends only on \(r\)
+
+	$$V = V(r)$$
+
+	Such potentials are called <i>central potentials</i>. For central potentials we can write the Hamilitonian as
+
+	$$H = \frac{\vec{p}^2}{2m} + V(r)$$
+
+	with the understanding that \(r = \sqrt{x^2 + y^2 + z^2}\). With this, we can show directly that \(\vec{L}\) is conserved. Because a vector is conserved if and only if each of its components are conserved, we will show only that \(L_x\) is conserved. The proofs that \(L_y\) and \(L_z\) are conserved follow from cyclically permuting \(x,y,\) and \(z\).
+
+	In classical mechanics the condition that a quantity be conserved is that its Poisson bracket with the Hamiltonian vanish:
+
+	$$\frac{dF}{dt}(q,p,t) = \frac{\partial F}{\partial t} + \frac{\partial F}{\partial q}\dot{q} + \frac{\partial F}{\partial p}\dot{p}= \frac{\partial F}{\partial t} + \Big \{ F,H  \Big \}$$
+
+	We can easily check that
+
+	$$\frac{dL_x}{dt} =  \Big \{ L_x,H  \Big \} = 0$$
+      </p>
+
+      <div class="centerwide">
+	<button class="collapsible">Show Proof</button>
+	<div class="content">
+	  \begin{align}
+	  \frac{dL_x}{dt} &=  \Big \{ L_x,H  \Big \} \\
+	  &= \Big \{ yp_z - zp_y, \frac{p_x^2}{2m} + \frac{p_y^2}{2m} + \frac{p_z^2}{2m} + V(r) \Big\}\\
+	  &= \frac{1}{2m} \Big \{y,p_y^2 \Big \}p_z - \frac{1}{2m}\Big \{z,p_z^2 \Big \}p_y + y\Big \{p_z, V(r) \Big \} - z \Big \{p_y, V(r) \Big \}
+	  \end{align}
+
+	  <p>The first two terms and the last two terms cancel independently. That the last two terms cancel follows from substituting \(r = \sqrt{x^2 + y^2 + z^2} \) and using the definition of Poisson brackets as a sum of partial derivatives.</p>
+	  
+	</div>       
+      </div>
+
+      <p>
+	To best make use of the spherical symmetry inherent in a problem with a central potential we should express our equations in spherical coordinates. It turns out that doing so leads to the convenient form for the Hamiltonian
+
+	$$H = \frac{p_r^2}{2m} +\frac{L^2}{2mr^2} + V(r)$$
+
+	And, noting that \(L\) is a constant, we see that the angular dependence drops out! This makes the Hamiltonian 1-dimensional instead of 3-dimensional &#8212; a great simplification. However showing that this formula is true requires some work. What we are really doing is a canonical transformation from cartesian coordinates and momenta to spherical coordinates and momenta:
+	$$x,y,z,p_x,p_y,p_z \rightarrow r, \theta, \phi, p_r,p_\theta, p_\phi $$
+
+	When we solve for the new Hamiltonian we know one leg of the transformation, namely, the coordinate transformation, but we do not know how the momenta transform.
+
+	\begin{align}
+	x &= r\sin\theta \cos\phi & p_x =\; ?\\
+	y &= r\sin\theta \sin\phi & p_y =\; ? \\
+	z &= r\cos\theta & p_z = \;?
+	\end{align}
+
+	Any time we are doing this kind of transformation, where we know one leg but not the other, we need to find the generating function. In this case, where we know the old coordinates in terms of the new, we use a type 3 generating function.
+
+	$$F_3 = F_3(\vec{p}, \vec{Q}) \qquad q_\alpha = - \frac{\partial F_3}{\partial p_\alpha} \quad P_\alpha = -\frac{\partial F_3}{\partial Q_\alpha}$$
+
+	In practice the best way to decide the right generating function is either experience, or looking at all four and seeing which one fits. Here we have
+
+	\begin{align}
+	-\frac{\partial F_3}{\partial p_x} = x &= r\sin\theta \cos\phi \\
+	-\frac{\partial F_3}{\partial p_y} = y &= r\sin\theta \sin\phi \\
+	-\frac{\partial F_3}{\partial p_z} = z &= r\cos\theta
+	\end{align}
+
+	Which we can easily integrate to determine
+
+	$$F_3(p_x,p_y,p_z, r, \theta, \phi) = - p_x r\sin\theta \cos\phi - p_y r \sin\theta\sin\phi - p_zr\cos\theta$$
+
+	Now we can use the other leg to write the new momenta
+
+	\begin{align}
+	p_r      &=  p_x\sin\theta\cos\phi + p_y \sin\theta\sin\phi + p_z\cos\theta \\
+	p_\theta &=  p_xr\cos\theta\cos\phi + p_y r\cos\theta\sin\phi - p_zr\sin\theta \\
+	p_\phi   &= -p_xr\sin\theta\sin\phi + p_y r\sin\theta\cos\phi
+	\end{align}
+
+	If you are very observant you can actually notice from right here that \(p_\phi = -p_xy + p_yx = L_z \), but this is getting a little ahead of ourselves. Inverting these is not too hard (but does require a little work)
+
+	\begin{align}
+	p_x &= p_r\sin\theta\cos\phi + \frac{\cos\theta\cos\phi}{r}p_\theta - \frac{\sin\phi}{r\sin\theta}p_\phi \\
+	p_y &= p_r\sin\theta\sin\phi + \frac{\cos\theta\sin\phi}{r}p_\theta + \frac{\cos\phi}{r\sin\theta}p_\phi \\
+	p_z &= p_r\cos\theta - \frac{\sin\theta}{r}p_\theta
+	\end{align}
+
+	This completes the spherical polar transformation. We can now substitute these into the Hamiltonian. Doing so is fairly messy but the result simplifies nicely
+
+	$$H = \frac{p_r^2}{2m} + \frac{p_\theta^2}{2mr^2} + \frac{p_\phi^2}{2mr^2\sin^2\theta} + V(r)$$
+
+	The supreme cunning comes from figuring out that
+
+	$$L^2 = p_\theta^2 + \frac{1}{\sin^2\theta}p_\phi^2$$
+
+	and using this to reduce the Hamiltonian to 1 dimension, as above. Try showing the above equivalence.
+      </p>
+
+      <div class="centerwide">
+	<button class="collapsible">Show Answer</button>
+	<div class="content">
+	  <p>\(L^2\) is a known function of the cartesian coordinates and momenta and so we can write it in spherical coordinates and momenta using the transformations just derived.
+
+	    $$L^2 = (yp_z - zp_y)^2 + (zp_x - xp_z)^2 + (xp_y - yp_x)^2$$
+	    
+	    Actually doing so and simplifying the expression is a major pain. The best solution is to use a symbolic computation program. You can use Mathematica, but I used Python which has the benefit of being free.</p>
+	  
+	</div>       
+      </div>
+      
+
+      
+    </div>
+
+
+
+
+
+
+      
+
+    <!-- *** Javascript for the collapsibles *** -->
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+    
+    <!-- ***************** Footer ********************** -->
+    <br>
+    <hr>
+    <br>
+    <footer>
+      <p style="text-align: center"> Updated November 10, 2018 </p>
+    </footer>
+   
+  </body>
+  
+</html>
+    
+      

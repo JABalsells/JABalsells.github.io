@@ -3,96 +3,20 @@ body {
     margin: 0;
 }
 
-img {
-    max-width:100%;
-}
-img.center {
-    max-width:90%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-/************** For Navbar  ******************/
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0 0 0 25%;
-    width: 100%;
-    background-color: #163f82;
-    position: fixed;         /* Make it stick, even on scroll */
-    overflow: hidden;
-}    
-
-li {
-    float: left;             /* Necessary for horizontal navbar*/
-}
-
-li a {                       /* Style of links in navbar */
-    display: block;
-    color: #c4c8d1;
-    padding: 8px 16px;
-    text-decoration: none;
-    text-align: center;
-    font-weight: bold;
-}
-
-
-li a:hover {                 /* Change the link color on hover */
-    background-color: #555;
-    color: white;
-}
-
-@media screen and (max-width: 600px){
-    ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	background-color: #163f82;
-	position: fixed;         /* Make it stick, even on scroll */
-	overflow: hidden;
-    }    
-
-    ul li {
-	float: none;
-	text-align: center;
-	}
-}
-
-/**************  Other stuff  ***************/
-div.bio {
-    overflow:hidden;
-}
-
-@media screen and (max-width: 500px){
-    div.bio {
-	overflow:visible;
-    }
-}    
-
 div.center {
     padding-left: 20%;
     padding-right:20%;
-}
-
-@media screen and (max-width: 600px){
-    div.center {
-	padding-left: 2%;
-	padding-right: 2%;
-
-    }
-}
-
-a {
-    text-decoration: none;
 }
 
 
 h1 {
     font-size:40px;
     font-family: Verdana, Tahoma;
+}
+h1.fancy {
+    text-align: center;
+    font-size:40px;
+    font-family: 'Cinzel Decorative',Verdana, Tahoma;
 }
 
 h2 { 
@@ -101,6 +25,11 @@ h2 {
 
 h2.center { 
     text-align: center;
+}
+
+h2.fancy {
+    text-align:center;
+    font-family: 'Cinzel Decorative',Verdana, Tahoma;
 }
 
 h3 { 
@@ -121,12 +50,148 @@ h6 {
 
 p { 
     font-family: Verdana, Tahoma;
+    line-height:1.4;
 }
 
 p.center {
-    text-align: center;
+    text-align:center;
 }
 
+a {
+    color:#163f82;
+    font-weight: bold;        
+    text-decoration: none;
+}
+
+a:visited {
+    color:#163f82;    
+    font-weight: bold;
+    text-decoration: none;    
+}
+
+hr {
+    width: 75%;
+    border: 0;
+    height: 1px;
+    background-image:linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+ul {
+    list-style-type: none;
+    width: 100%;
+    overflow: hidden;
+}    
+
+
+li {
+    list-style-type: disc;
+}
+
+pre {     /**** Used for code block ****/
+    background-color: #eeeeee;
+    padding-top: 30px;
+    padding-right:20px;
+}    
+
+/************** For Navbar  ******************/
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 25%;
+    width: 100%;
+    background-color: #163f82;
+    position: fixed;         /* Make it stick, even on scroll */
+    overflow: hidden;
+}    
+
+li.nav {
+    list-style-type: none;    
+    float: left;             /* Necessary for horizontal navbar*/
+}
+
+li.nav a {                       /* Style of links in navbar */
+    display: block;
+    color: #DDD;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+li.nav a:hover {                 /* Change the link color on hover */
+    background-color: #555;
+    color: white;
+}
+
+@media screen and (max-width: 600px){
+    ul.nav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: #163f82;
+	position: fixed;         /* Make it stick, even on scroll */
+	overflow: hidden;
+    }    
+
+    ul.nav li {
+	float: none;
+	text-align:center;
+	}
+}
+
+/** Collapsible **/
+
+/* Style the button that is used to open and close the collapsible content */
+div.centerwide {
+    padding-left: 10%;
+    padding-right: 10%;		      
+}
+.collapsible {
+  background-color: #1a4a99;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #163f82;
+}
+.collapsible:after {
+    content: '\002B'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+    padding: 0 18px;
+    background-color: #f1f1f1;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-radius: 10px;    
+}
+
+/**************  Other stuff  ***************/
+
+div.bio {
+    overflow:hidden;
+}
 
 .img-rounded {
     border-radius: 6px;
@@ -136,7 +201,23 @@ p.center {
     height:auto;
 }
 
-@media screen and (max-width: 500px){
+img.center {
+    max-width:80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 600px){
+    div.center {
+	padding-left: 2%;
+	padding-right: 2%;
+    }
+
+    div.bio {
+	overflow:visible;
+    }
+
     h1 {
 	font-size: 30px;
 	font-family: Verdana, Tahoma;
@@ -148,15 +229,25 @@ p.center {
 	margin-bottom:5px;
 	width:120px;
 	height:auto;
+    }
 }
 
-
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #163f82;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
 }
 
-hr {
-    width: 75%;
-    border: 0;
-    height: 1px;
-    background-image:linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
 }
-

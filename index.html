@@ -10,7 +10,6 @@
     <meta name="author"      content="Joseph Balsells">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <meta name="description" content="I am a senior at Yale, completing a B.S. degree in Physics.">
-
     
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
@@ -27,24 +26,25 @@
   <body>
 
 
-    <ul>
-      <li><a href="./index.html">Home</a></li>
-      <li><a href="#Research">Research</a></li>
-      <li><a href="./musings/index.html">Musings</a></li>
-      <li><a href="./notes/index.html">Notes</a></li>
-      <li><a href="./photos.html">Photos</a></li>
+    <ul class="nav">
+      <li class="nav"><a href="./index.html">Home</a></li>
+      <li class="nav"><a href="#Research">Research</a></li>
+      <li class="nav"><a href="./musings/index.html">Musings</a></li>
+      <li class="nav"><a href="./notes/index.html">Notes</a></li>
+      <li class="nav"><a href="./photos.html">Photos</a></li>
     </ul>
     
     <br>
     
-    <img src="./Files/bear_peak.jpg" alt="Bear Peak">
+    <img style="max-width:100%" src="./Files/bear_peak.jpg" alt="Bear Peak">
 
 	
     <div style="text-align:center"><br>
       
       <h1>Joseph Balsells</h1>
       
-      <h3> <a style="text-decoration: underline;"
+      <h3> <a style="text-decoration: underline;
+		     color:#163f82;"
 	      href="mailto:joseph.balsells@yale.edu?subject=Website Inquiry">
 	    jzb1007@psu.edu </a></h3>
 
@@ -71,11 +71,11 @@
 
 	<h2>About me</h2>
 
-	<p>I am a first-year PhD candidate in the physics department and Penn State. I obtained my B.S. degree in Physics at Yale.</p>
+	<p>I am a first-year PhD candidate in the physics department at Penn State. I obtained my B.S. in Physics at Yale.</p>
 	
-	<p>At Yale I wrote my thesis with George Fleming on the representation theory of SO(3). Before that I worked for the National Oceanic and Atmospheric Administration (NOAA) Earth System Research Laboratory (ESRL) in Boulder, Colorado where I studied cloud and aerosol processes for nearly four years.</p>
+	<p>At Yale I wrote my thesis with George Fleming on the representation theory of SO(3). Before that I worked for the National Oceanic and Atmospheric Administration (NOAA) Earth System Research Laboratory (ESRL) in Boulder, Colorado where I studied cloud and aerosol processes.</p>
 
-	<p>Our goal at ESRL is to gain a comprehensive understanding of the Earth system. This means that we study processes as small as solar photons driving stratospheric chemistry and as large the global circulation of the jet streams. Clouds, which cover nearly two-thirds of the world's surface at any given time, are an essential part of this system.</p>
+	<p>I am originally from Boulder and return as often as I can to get out into the mountains.</p>
 	
       </div>
     </div>    
@@ -139,6 +139,7 @@
 
     <div class="center">
       <h2>Atmospheric Modeling</h2>
+	<p>Our goal at ESRL is to gain a comprehensive understanding of the Earth system. This means that we study processes as small as solar photons driving stratospheric chemistry and as large the global circulation of the jet streams. Clouds, which cover nearly two-thirds of the world's surface at any given time, are an essential part of this system.</p>      
       <p>Clouds may affect our lives on very short timescales, but their climatic patterns affect our lives much more permanently. In 1974 Twomey <a href="http://wwwdca.iag.usp.br/www/material/akemi/radiacao-I/Pollution_and_Planetary_Albedo_Twomey74a.pdf" target="_blank">showed</a> how clouds couple the climate to pollution. The mechanism depends on microphysical interactions between water vapor and pollution particles called aerosols. When water vapor is lifted in the atmosphere to a temperature where it is cool enough to reach saturation, clouds usually cannot form because the tiny droplets of water break apart too easily. It is only through the action of aerosols acting as cloud droplet nuclei that cloud droplets grow large enough to sustain a cloud. So a small amount of aerosol in the atmosphere is necessary. But with more aerosol, more cloud droplets would form from the same amount of condensed water leading to clouds with different optical properties. Quantifying these changes requires a sophisticated theory of atmospheric chemistry and microphysical processes. In addition, to have any hope of applying our theory we have to locate and quantify precisely the sources of aersol, both natural and anthropogenic. How sensitive are clouds to perturbations in aerosol forcing? How sensitive is the climate to these perturbations? By extension NOAA is interested in concrete practical questions like, How would rain patterns change? And how would we respond? This problem bridges the gap between science and policy-making as we seek to determine in what ways our behavior alters global atmospheric dynamics.</p>
 	<p>Although there is no substitue for measurements on real clouds, the open atmosphere is difficult to measure and it is impossible to perform replicable experiments. In response to nature's unyielding resolve to never repeat herself, we have created numerical models which simulate natures of our own. With these models we can run large-scale, replicable experiments on realistic clouds which we may then analyze at our leisure and in explicit detail. The influence of numerical models on atmospheric science has been profound.</p>      
       <p>Processes relevent to atmospheric science encompass a staggering range of scales. Aerosol activation and cloud droplets occupy nano and micro scales while the global circulation occupies thousands of kilometers. To fully resolve all of these processes in a single model will be beyond computational ability for the foreseeable future. But even if we could resolve all of these scales at the same time, we may not want to or even need to. Depending on the application it may be unimportant to track the location of every droplet in a cloud. Thus there exists a hierarchy of models to cater to the diverse needs of atmospheric research. The model my group uses is of intermediate variety, resolving domains from a few kilometers wide to perhaps 100km with a resolution ranging from 10m to 100m. Any process occuring in a gridbox smaller than 10-100m is not resolved explicitly by the model. The model my group uses is called the System for Atmospheric Modeling (<a href="http://rossby.msrc.sunysb.edu/~marat/SAM.html" target="_blank">SAM</a>).</p>
@@ -184,7 +185,7 @@
     <hr>
     <br>
     <footer>
-      <p class="center"> Updated January 9, 2018 </p>
+      <p style="text-align: center"> Updated November 10, 2018 </p>
     </footer>
    
   </body>
