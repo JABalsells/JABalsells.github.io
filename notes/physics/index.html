@@ -78,7 +78,7 @@
 	<li><a href="#canonical">Canonical Transformations</a></li>
 	<li><a href="#AA">Integrability and Action Angle Variables</a></li>
 	<li><a href="#perturbation">Canoncial Perturbation Theory</a></li>
-	<li><a href="#">Introduction to Quantum Mechanics</a></li>
+	<li><a href="#QMintro">Introduction to Quantum Mechanics</a></li>
 	<li><a href="#3dQM">Quantum Mechanics in Spherical Symmetry</a></li>
 	<li><a href="#sphcoordangmom">Spherical Coordinates and Angular Momentum</a></li>
 	<li><a href="#">Quantum Hamiltonian Dynamics</a></li>
@@ -88,7 +88,89 @@
     </div>
     
 
+    <!--********* Quantum mechanics in Spherical Symmetry  ************************-->
+    
+    <p id="3dQM"></p>
+    <br><br>
 
+    <div class="center">
+      
+      <h2>
+	Spherical Coordinates and Angular Momentum
+      </h2>
+    
+      <p>To write the momentum operator we need to know the Laplacian in spherical coordinates. The simplest (conceptually) though cumbersome way to do this is simply to apply the variable transformation. In cartesian coordinates the Laplacian is
+
+	$$\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z ^2}$$
+
+	Because we know the transformation from Cartesian to Spherical coordinates we can fairly easily express the new partial derivatives in terms of the Cartesian ones:
+
+	\begin{align}
+	\frac{\partial }{\partial r} &= \frac{\partial x}{\partial r}\frac{\partial }{\partial x} + \frac{\partial y}{\partial r}\frac{\partial }{\partial y} + \frac{\partial z}{\partial r}\frac{\partial }{\partial z} \\
+	\frac{\partial }{\partial \theta} &= \frac{\partial x}{\partial \theta}\frac{\partial }{\partial x} + \frac{\partial y}{\partial \theta}\frac{\partial }{\partial y} + \frac{\partial z}{\partial \theta}\frac{\partial }{\partial z} \\
+	\frac{\partial }{\partial \phi} &= \frac{\partial x}{\partial \phi}\frac{\partial }{\partial x} + \frac{\partial y}{\partial \phi}\frac{\partial }{\partial y} + \frac{\partial z}{\partial \phi}\frac{\partial }{\partial z} \\	
+	\end{align}
+
+	However, to write the Laplacian we need to invert this. The problem is easier if we work in matrix notation.
+
+	$$
+	\begin{pmatrix}
+	\partial_r \\
+	\partial_\theta \\
+	\partial_\phi
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	\frac{\partial x}{\partial r} & \frac{\partial y}{\partial r} & \frac{\partial z}{\partial r} \\
+	\frac{\partial x}{\partial \theta} & \frac{\partial y}{\partial \theta} & \frac{\partial z}{\partial \theta} \\
+	\frac{\partial x}{\partial \phi} & \frac{\partial y}{\partial \phi} & \frac{\partial z}{\partial \phi} \\	
+	\end{pmatrix}
+	\begin{pmatrix}
+	\partial_x \\
+	\partial_y \\
+	\partial_z
+	\end{pmatrix}
+	$$
+
+	We define the Jacobian matrix
+
+	$$
+	J = \begin{pmatrix}
+	       \frac{\partial x}{\partial r}      & \frac{\partial y}{\partial r}      & \frac{\partial z}{\partial r} \\
+               \frac{\partial x}{\partial \theta} & \frac{\partial y}{\partial \theta} & \frac{\partial z}{\partial \theta} \\
+	       \frac{\partial x}{\partial \phi}   & \frac{\partial y}{\partial \phi}   & \frac{\partial z}{\partial \phi} \\	
+	\end{pmatrix}
+	= \begin{pmatrix}
+	\sin\theta\cos\phi & \sin\theta\sin\phi & \cos\theta \\
+	r\cos\theta\cos\phi & r\cos\theta\sin\phi & -r\sin\theta \\
+	-r\sin\theta\sin\phi & r\sin\theta\cos\phi & 0 
+	\end{pmatrix}
+	$$
+
+	The inverse is best computed using Sympy as
+
+	$$
+	J^{-1} = \begin{pmatrix}
+	\sin\theta\cos\phi & \frac{\cos\theta\cos\phi}{r} & -\frac{\sin\phi}{r\sin\theta} \\
+	\sin\theta\sin\phi & \frac{\cos\theta\sin\phi}{r} & \frac{\cos\phi}{r\sin\theta} \\
+	\cos\theta & -\frac{\sin\theta}{r} & 0
+	\end{pmatrix}
+	$$
+
+	This gives us the partial derivatives
+
+	\begin{align}
+	\partial_x &= \sin\theta\cos\phi\partial_r + \frac{\cos\theta\cos\phi}{r}\partial_\theta - \frac{\sin\phi}{r\sin\theta}\partial_\phi \\
+	\partial_y &= \sin\theta\sin\phi\partial_r + \frac{\cos\theta\sin\phi}{r}\partial_\theta + \frac{\cos\phi}{r\sin\theta}\partial_\phi \\
+	\partial_z &= \cos\theta\partial_r          -\frac{\sin\theta}{r} \partial_\theta  \\	
+	\end{align}
+
+	Substituting these and simplifying gives the correct formula for the Laplacian in spherical Coordinates.
+      </p>
+    
+    </div>
+    
+    
     <!--********* Spherical Coordinates and Angular Momentum  ***********-->
 
     <p id="sphcoordangmom"></p>
@@ -273,7 +355,7 @@ function topFunction() {
     <hr>
     <br>
     <footer>
-      <p style="text-align: center"> Updated November 10, 2018 </p>
+      <p style="text-align: center"> Updated November 13, 2018 </p>
     </footer>
 <script>
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */

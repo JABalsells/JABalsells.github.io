@@ -209,53 +209,6 @@ pre {     /**** Used for code block ****/
 
 
 
-ul.nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0 0 0 25%;
-    width: 100%;
-    background-color: #163f82;
-    position: fixed;         /* Make it stick, even on scroll */
-    overflow: hidden;
-}    
-
-li.nav {
-    list-style-type: none;    
-    float: left;             /* Necessary for horizontal navbar*/
-}
-
-li.nav a {                       /* Style of links in navbar */
-    display: block;
-    color: #DDD;
-    padding: 8px 16px;
-    text-decoration: none;
-    text-align: center;
-    font-weight: bold;
-}
-
-
-li.nav a:hover {                 /* Change the link color on hover */
-    background-color: #555;
-    color: white;
-}
-
-@media screen and (max-width: 1000px){
-    ul.nav {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	background-color: #163f82;
-	position: fixed;         /* Make it stick, even on scroll */
-	overflow: hidden;
-    }    
-
-    ul.nav li {
-	float: none;
-	text-align:center;
-	}
-}
-
 /** Collapsible **/
 
 /* Style the button that is used to open and close the collapsible content */
