@@ -2,16 +2,3 @@
 
 
 
-.row {
-    padding-left:5%;
-    padding-right:5%
-}
-    
-/* Clearfix (clear floats) */
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-
