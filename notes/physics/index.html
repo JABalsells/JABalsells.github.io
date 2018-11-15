@@ -79,12 +79,65 @@
 	<li><a href="#AA">Integrability and Action Angle Variables</a></li>
 	<li><a href="#perturbation">Canoncial Perturbation Theory</a></li>
 	<li><a href="#QMintro">Introduction to Quantum Mechanics</a></li>
+	<li><a href="#1dQM">Quantum Mechanics in One Dimension</a></li>
 	<li><a href="#3dQM">Quantum Mechanics in Spherical Symmetry</a></li>
 	<li><a href="#sphcoordangmom">Spherical Coordinates and Angular Momentum</a></li>
 	<li><a href="#">Quantum Hamiltonian Dynamics</a></li>
 	<li><a href="#">Quantum Chaos</a></li>
       </ul>
 
+    </div>
+
+
+    <!--********* Introduction to Quantum Mechanics  ************************-->
+    
+    <p id="QMintro"></p>
+    <br><br>
+
+    <div class="center">
+
+      <h2>
+	Quantum Mechanics
+      </h2>
+
+      <p>
+	Quantum mechanics is radically different from classical mechanics. The difference comes in from the ground level and the basic framework of classical mechanics is supplanted by wholly new mathematical structures in quantum mechanics. When solving a problem in classical mechanics there were a lot of things going on in the background which defined the problem that you were not even aware of as being part of the assumptions of classical mechanics.
+      </p>
+      <p>
+	The main difference is in the description of a state. The state of a system is of primary importance in physics. In a sense, being able to quantitatively describe the state of a physical system <i>is</i> the core of physics. Once we have a mathematical description of the state of a system, physics sets about finding the appropriate rules or laws which describe the evolution of that state.
+      </p>
+      <p>
+	In classical mechanics we assume that the state of a system is described by a point in phase space whose evolution is given by Hamilton's, Newton's, or Lagrange's equations (they are all equivalent). It is worth emphasizing the three characters in this game: the mathematical description of the system (a mathematical point), the mathematical structure that this point lives in (a symplectic manifold called phase space), and the laws that describe the motion of the system in this space, also called its trajectory (Hamilton's equations).
+      </p>
+      <p>
+	It is also worth emphasizing that explaining these assumptions, e.g., what is phase space?, what are Hamilton's equations?, and all the rest of the formalism that takes some time to understand, is just formalism that reflects how we perceive the world. The <i>work</i> of classical mechanics comes in using this framework to solve problems. For many systems we have found that this always reduces to solving differential equations and quadrature. This is worth repeating: the formalism of classical mechanics is built around the structure of phase space and Hamiltonian evolution. The basic assumption is that particles have positions \(x\) and momenta \(p\) which suffice to describe them. Any other quantity of interest, be it energy, angular momentum, or otherwise, can be derived from knowing how \(x\) and \(p\) evolve.
+      </p>
+      <p>
+	As it turns out, in quantum mechanics this framework, natural as it is, is simply incorrect. It was natural to give each particle a position and a momentum, but, as we will see, the correct starting description of a system is as a vector \(\vert \psi \rangle \) in a Hilbert space evolving according to the Schrodinger equation. We will explain what this means in due course. Why this is the correct description is harder to answer. (As Feynman would say, Why questions always are). What we mean to ask is how exactly can we justify this radical shift? The answer, as you should expect, comes down to experiment. It is empirically true that states behave like vectors and not like points.
+      </p>
+      <p>
+	Historically, trying to work with certain experiments that produced systems whose states behaved like vectors without understanding this mathematical framework was very frustrating and difficult. There is a famous story of Heisenberg's development of quantum mechanics where he managed to write a set of equations for describing the evolution of a system. He happily left the manuscript with his advisor Max Born who mulled over what Heisenberg had written and had the following to say:
+      </p>
+      <blockquote>
+	<p>
+	By consideration of ...examples...[Heisenberg] found this rule.... This was in the summer of 1925. Heisenberg...took leave of absence...and handed over his paper to me for publication....
+	</p>
+	<p>
+	Heisenberg's rule of multiplication left me no peace, and after a week of intensive thought and trial, I suddenly remembered an algebraic theory....Such quadratic arrays are quite familiar to mathematicians and are called matrices, in association with a definite rule of multiplication. I applied this rule to Heisenberg's quantum condition and found that it agreed for the diagonal elements. It was easy to guess what the remaining elements must be, namely, null; and immediately there stood before me the strange formula
+	</p>
+	$$QP - PQ = \frac{ih}{2\pi}$$
+      </blockquote>
+
+      <p>
+      The source of this quote is Born's Nobel lecture, as quoted in Thomas F. Jordan's Quantum Mechanics in Simple Matrix Form, p. 6.
+      </p>
+      <p>
+      </p>
+      <p>
+      </p>
+      
+      
+      
     </div>
     
 
@@ -349,14 +402,6 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 </script>
-    
-    <!-- ***************** Footer ********************** -->
-    <br>
-    <hr>
-    <br>
-    <footer>
-      <p style="text-align: center"> Updated November 13, 2018 </p>
-    </footer>
 <script>
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 function myFunction() {
@@ -369,6 +414,14 @@ function myFunction() {
 }
 </script>
    
+    
+    <!-- ***************** Footer ********************** -->
+    <br>
+    <hr>
+    <br>
+    <footer>
+      <p style="text-align: center"> Updated November 14, 2018 </p>
+    </footer>
   </body>
   
 </html>
