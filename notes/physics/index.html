@@ -24,6 +24,23 @@
     <!-- Enable MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>
     
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+
+  TEX.Definitions.macros.bfrac = "myBevelFraction";
+
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script>
+
   </head>
 
 
@@ -39,8 +56,9 @@
 	<a href="../../index.html#Research">Research</a>
 	<a href="../../musings/index.html">Musings</a>
 	<div class="subnav">
-	  <button class="subnavbtn">Notes <i class="fa fa-caret-down"></i></button>
+	  <button onclick="location.href='../index.html'" class="subnavbtn">Notes <i class="fa fa-caret-down"></i></button>
 	  <div class="subnav-content">
+	    <a href="../index.html">Notes Home</a>
 	    <a href="./index.html">Physics</a>
 	    <a href="../mathematics/index.html">Mathematics</a>
 	  </div>
@@ -67,7 +85,7 @@
     <div class="center">
 
       
-      <p>Classical and Quantum mechanics present two frameworks for describing the world. Despite making statements about the same physical objects they differ in their basic assumptions. This difference in their mathematical structure usually leads to their being taught in separate courses. At an introductory level this separation is helpful, however, one eventually begins to wonder about the connections between the two. Both theories make statements which sound similar. Both describe systems like free particles and harmonic oscillators as having momentum and position. Further, we understand that classical mechanics must emerge out of quantum mechanics in some logically consistent manner. I believe that in presenting them in close proximity some of these questions may be illuminated.</p>
+      <p>Classical and Quantum mechanics present two frameworks for describing the world. Despite making statements about the same physical objects they differ in their basic assumptions. This difference in their mathematical structure usually leads to their being taught in separate courses. At an introductory level this separation is helpful, however, one eventually begins to wonder about the connections between the two. We understand that classical mechanics must emerge out of quantum mechanics in some logically consistent manner. Both describe systems like free particles and harmonic oscillators as having momentum and position. What then is the relation between the quantum description and the classical one? I believe that in presenting them in close proximity some of these questions may be illuminated.</p>
 
       
       <h2>Contents:</h2>
@@ -110,10 +128,10 @@
 	In classical mechanics we assume that the state of a system is described by a point in phase space whose evolution is given by Hamilton's, Newton's, or Lagrange's equations (they are all equivalent). It is worth emphasizing the three characters in this game: the mathematical description of the system (a mathematical point), the mathematical structure that this point lives in (a symplectic manifold called phase space), and the laws that describe the motion of the system in this space, also called its trajectory (Hamilton's equations).
       </p>
       <p>
-	It is also worth emphasizing that explaining these assumptions, e.g., what is phase space?, what are Hamilton's equations?, and all the rest of the formalism that takes some time to understand, is just formalism that reflects how we perceive the world. The <i>work</i> of classical mechanics comes in using this framework to solve problems. For many systems we have found that this always reduces to solving differential equations and quadrature. This is worth repeating: the formalism of classical mechanics is built around the structure of phase space and Hamiltonian evolution. The basic assumption is that particles have positions \(x\) and momenta \(p\) which suffice to describe them. Any other quantity of interest, be it energy, angular momentum, or otherwise, can be derived from knowing how \(x\) and \(p\) evolve.
+	It is worth emphasizing that explaining these assumptions, e.g., what is phase space?, what are Hamilton's equations?, and all the rest of the formalism that takes some time to understand, is just formalism that reflects how we perceive the world. The <i>work</i> of classical mechanics comes in using this framework to solve problems. For many systems we have found that this always reduces to solving differential equations and quadrature. This is worth repeating: the formalism of classical mechanics is built around the structure of phase space and Hamiltonian evolution. The basic assumption is that particles have positions \(x\) and momenta \(p\) which suffice to describe them. Any other quantity of interest, be it energy, angular momentum, or otherwise, can be derived from knowing how \(x\) and \(p\) evolve.
       </p>
       <p>
-	As it turns out, in quantum mechanics this framework, natural as it is, is simply incorrect. It was natural to give each particle a position and a momentum, but, as we will see, the correct starting description of a system is as a vector \(\vert \psi \rangle \) in a Hilbert space evolving according to the Schrodinger equation. We will explain what this means in due course. Why this is the correct description is harder to answer. (As Feynman would say, Why questions always are). What we mean to ask is how exactly can we justify this radical shift? The answer, as you should expect, comes down to experiment. It is empirically true that states behave like vectors and not like points.
+	As it turns out, in quantum mechanics this framework, natural as it is, is simply incorrect. It was natural to give each particle a position and a momentum, but, as we will see, the correct starting description of a system is as a vector \(\vert \psi \rangle \) in a Hilbert space evolving according to the Schrodinger equation. From this vector we may obtain information about the position and momentum of the particle, but the state vector is logically prior. Why this is the correct description is harder to answer. (As Feynman would say, Why questions always are). What we mean to ask is how exactly can we justify this radical shift? The answer, as you should expect, comes down to experiment. It is empirically true that states behave like vectors and not like points.
       </p>
       <p>
 	Historically, trying to work with certain experiments that produced systems whose states behaved like vectors without understanding this mathematical framework was very frustrating and difficult. There is a famous story of Heisenberg's development of quantum mechanics where he managed to write a set of equations for describing the evolution of a system. He happily left the manuscript with his advisor Max Born who mulled over what Heisenberg had written and had the following to say:
@@ -141,6 +159,98 @@
     </div>
     
 
+    <!--********* Two level system  ************************-->
+    
+    <p id="twolevel"></p>
+    <br><br>
+
+    <div class="center">
+      
+      <h2>
+	Two level systems and SU(2)
+      </h2>
+
+      <p>The simplest nontrivial quantum system is one whose state space is two dimensional, \(\mathcal{H} = \mathbb{C}^2\). That is, the state space is spanned by two vectors whose coefficients are complex numbers. Choosing the standard basis we denote these basis vectors as
+
+	$$\vert 0 \rangle = \binom{1}{0} \qquad \vert 1 \rangle = \binom{0}{1}$$
+
+	In terms of this basis we can write any normalized state as
+
+	$$ \vert \psi \rangle = \alpha \vert 0 \rangle + \beta \vert 1 \rangle \qquad \vert \alpha \vert^2 + \vert \beta \vert^2 = 1$$
+
+	Because the overall phase of the wavefunction is immaterial, \(\alpha\) can and often is chosen to be real. Then the normalization requirement is automatically met if we choose \(\alpha = \cos(\theta/2), \beta = \sin(\theta/2)e^{i\phi} \) (the factor of \(1/2\) in the definition of \(\theta\) is chosen purely for later convenience). In this case we have
+
+	$$ \vert \psi \rangle = \cos\Big(\frac{\theta}{2} \Big) \vert 0 \rangle + \sin\Big(\frac{\theta}{2}\Big) e^{i\phi}\vert 1 \rangle $$
+
+	Of course the coefficient of \(\vert 0 \rangle\) does not have to be real. Another common choice is the more symmetric one,
+
+	$$ \vert \psi \rangle = \cos\Big(\frac{\theta}{2} \Big) e^{-i\bfrac{\phi}{2}}\vert 0 \rangle + \sin\Big(\frac{\theta}{2}\Big) e^{i\bfrac{\phi}{2}}\vert 1 \rangle $$
+
+	This gives the Bloch sphere description of a state in a two level system.
+      </p>
+
+      <p>
+	Observables are represented by self-adjoint operators. An arbitrary operator in \(\mathbb{C}^2\) is written as a 2x2 matrix. The requirement that it be self-adjoint implies that the diagonal elements are complex conjugates. Such operators are spanned by the Pauli matrices.
+
+	$$
+	\begin{pmatrix}
+	a_0 + a_3   & a_1 - i a_2 \\
+	a_1 + i a_2 & a_0 - a_3
+	\end{pmatrix} = a_0 \mathbb{1} + a_1 \sigma_1 + a_2 \sigma_2 + a_3 \sigma_3
+	$$
+
+
+	In particular the Hamiltonian is such an operator so we may write $H = a_0 \mathbf{1} + \mathbf{v}\cdot \mathbf{\sigma}$ for appropriate choices of the parameters. The benefit of expanding in Pauli matrices is that they have nice commutation (and anti-commutation) relations. These allow us to prove that, provided $\mathbf{v}$ is a unit vector,
+
+	\begin{equation*}
+	(\mathbf{v}\cdot\mathbf{\sigma})^n =
+	\begin{cases}
+	1 &n \text{ even} \\
+	\mathbf{v}\cdot\mathbf{\sigma} &n \text{ odd}
+	\end{cases}
+	\end{equation*}
+
+
+	It follows then that the time evolution of any system is easy to write down
+
+	$$i\hbar \frac{\partial \vert \psi (t)\rangle}{\partial t} = H \vert \psi (t) \rangle \implies \vert \psi (t) \rangle =  e^{-\frac{i H t}{\hbar}}\vert \psi (0) \rangle $$
+
+	Substituting \(H = a_0 \mathbf{1} + \mathbf{v}\cdot \mathbf{\sigma}\) gives
+
+	\begin{align*}
+	\exp \Big(-\frac{i H t}{\hbar} \Big) &= \exp \Big(-\frac{i a_0 t}{\hbar}\mathbf{1}  \Big) \exp\Big(- i\frac{t\vert\mathbf{v}\vert}{\hbar} \frac{\mathbf{v}}{\vert\mathbf{v}\vert}\cdot\mathbf{\sigma} \Big)\\
+	&= \exp \Big(-\frac{i a_0 t}{\hbar} \Big) \cdot \Bigg (\cos\Big(  \frac{t\vert\mathbf{v}\vert}{\hbar} \Big) + i \frac{\mathbf{v}}{\vert\mathbf{v}\vert} \cdot \mathbf{\sigma} \sin\Big ( \frac{t\vert\mathbf{v}\vert}{\hbar} \Big )\Bigg)  
+	\end{align*}
+
+	
+	Let us imagine a system in which we have a diagonal Hamiltonian \(H_0 = diag(E_1,E_2) \). In this system \(\vert 0 \rangle \) and \(\vert 1\rangle \) are eigenstates of the Hamiltonian. A general Hamiltonian will have some additional interaction \(W\) added to it
+
+	$$
+	H = H_0 + W =
+	\begin{pmatrix}
+	E_1'   & w \\
+	w^* & E_2'
+	\end{pmatrix} = \frac{E_1' + E_2'}{2} \mathbb{1} + \vec{v}\cdot \vec{\sigma}
+	$$
+
+	The stationary states of this system will generall be different from those in the original. Solving for the eigenvalues of \(H\) we find that the new energies of the system are
+
+	$$\lambda_\pm = E_\pm = \frac{E_1' + E_2'}{2} \pm \frac{1}{2}\sqrt{(E_1'-E_2')^2 + 4 \vert w \vert^2 }$$
+
+	Substitution of this form of \(H\) gives us
+
+	$$\vec{v} = \Big( Re(w), -im(w), \frac{E_1' - E_2'}{2}\Big)$$
+	$$\vert \vec{v} \vert^2 = \vert w\vert^2 + \frac{1}{4}(E_1' - E_2')^2 $$
+
+	And we may recover the result derived in class.
+      </p>
+      
+
+    </div>
+    
+
+
+    
     <!--********* Quantum mechanics in Spherical Symmetry  ************************-->
     
     <p id="3dQM"></p>
@@ -420,7 +530,7 @@ function myFunction() {
     <hr>
     <br>
     <footer>
-      <p style="text-align: center"> Updated November 14, 2018 </p>
+      <p style="text-align: center"> Updated December 7, 2018 </p>
     </footer>
   </body>
   
