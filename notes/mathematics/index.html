@@ -157,7 +157,10 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 	Spherical Coordinates and Angular Momentum
       </h2>
 
-
+      <p>
+	I have oftentimes found the presentation of angular momentum operators skipping not-so-trivial steps (e.g., <nobr>Sakuri &#167 3.6</nobr> going from \(L_z\) to \(L_x, L_y\) by cyclic permutation of the indices is not so clear in polar coordiantes). This note represents a self-contained and reasonably complete derivation of the forms of the angular momentum operators in quantum mechanics.
+      </p>
+      <hr>
       <p>
 	In classical mechanics the angular momentum of a particle with position \(\vec{r}\) and momentum \(\vec{p}\) is defined as \(\vec{L} = \vec{r} \times \vec{p}  \). In cartesian coordinates we have
       </p>
@@ -262,8 +265,8 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 	Likewise, writing the terms of angular momentum in spherical coordinates gives
 
 	\begin{align}
-	L_x &=  \left(-\sin(\phi) p_\theta - \cot(\theta) \cos(\theta) p_\phi\right) \\
-	L_y &=  \left( \cos(\phi) p_\theta - \cot(\theta) \sin(\theta) p_\phi\right) \\
+	L_x &=  \left(-\sin(\phi) p_\theta - \cot(\theta) \cos(\phi) p_\phi\right) \\
+	L_y &=  \left( \cos(\phi) p_\theta - \cot(\theta) \sin(\phi) p_\phi\right) \\
 	L_z &=  p_\phi
 	\end{align}
 
@@ -361,8 +364,31 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <span class="c1">#       sin (θ)          </span>
 </pre></div>
       </div></div>
-      
 
+      <br>
+      
+      <p>
+	In quantum mechanics we make the substitution \( p_x \mapsto -i\hbar \frac{d}{dx} \). This gives us the quantum mechanical angular momentum operators
+
+	\begin{align}
+	\hat{L}_x &=  -i\hbar \left(-\sin(\phi) \frac{\partial}{\partial \theta} - \cot(\theta) \cos(\phi) \frac{\partial}{\partial \phi} \right) \\
+	\hat{L}_y &=  -i\hbar \left( \cos(\phi) \frac{\partial}{\partial \theta} - \cot(\theta) \sin(\phi) \frac{\partial}{\partial \phi} \right) \\
+	\hat{L}_z &=  -i\hbar \frac{\partial}{\partial \phi}
+	\end{align}
+
+	as found for example in Sakuri &#167 3.6.
+      </p>
+
+      <p>
+	Despite having these forms available they are typically not very useful without knowing the derivative \(\frac{\partial}{\partial \theta} Y_l^m\). Oftentimes it is better to simply make the replacements
+
+	\begin{align}
+	L_x \rightarrow \frac{L_+ + L_-}{2} \\
+	L_y \rightarrow \frac{L_+ - L_-}{2i}
+	\end{align}
+
+	and leverage the algebraic properties of the raising and lowering operators.
+      </p>
       
     </div>
 
